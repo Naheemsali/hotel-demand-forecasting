@@ -20,6 +20,7 @@ Validation strategy 5-fold non-overlapping time-series cross-validation (step = 
 MODELS COMPARED 
 
 Category      Model                Package 
+
 Baseline      SeasonalNaive        statsforecast
 
 
