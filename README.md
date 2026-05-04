@@ -1,2 +1,4 @@
 # hotel-demand-forecasting
-Daily hotel demand forecasting for 17 properties 
+In this project I was required to forecaste daily hotel demand for 19 hotel properties accross a 28-day period. I used a comprehensive multi-model benchworking framework 
+📋 Project Overview
+Datasetsample_hotels.parquet — 19 hotel series, daily frequencyTargetNormalised daily room demand (y ∈ [0, 1])Forecast horizonh = 28 days (next 4 weeks)Training period2022-01-01 → 2023-06-02Test period2023-06-03 → 2023-06-30Total observations10,172 rows across 19 hotelsValidation strategy5-fold non-overlapping time-series cross-validation (step = 28)
