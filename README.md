@@ -19,6 +19,9 @@ Validation strategy -> 5-fold non-overlapping time-series cross-validation (step
 
 🤖 Models Compared
 
-Category:   Baseline     Model: Naive     Package: statsforecast
+| Category | Model | Package |
+|---|---|---|
+| Baseline | Naive | `statsforecast` |
+| Baseline | SeasonalNaive (season_length=7) | `statsforecast` |
 
 
