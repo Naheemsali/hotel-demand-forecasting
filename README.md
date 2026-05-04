@@ -13,7 +13,7 @@ Training period -> `2022-01-01 → 2023-06-02`
 
 Test period -> `2023-06-03 → 2023-06-30`
 
-Total observations -> `10,172 rows across 19 hotels`
+Total observations -> `10,172 rows across 17 hotels`
 
 Validation strategy -> 5-fold non-overlapping time-series cross-validation (step = 28)
 
