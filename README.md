@@ -1,5 +1,5 @@
 # hotel-demand-forecasting
-In this project I was required to forecaste daily hotel demand for 19 hotel properties accross a 28-day period. I used a comprehensive multi-model benchworking framework 
+In this project I was required to forecaste daily hotel demand for 19 hotel properties accross a 28-day period. I used a comprehensive multi-model benchworking framework <www.google.com> | [Notebook 1](www.google.com)
 
 📋 PROJECT OVERVIEW
 
