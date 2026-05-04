@@ -7,7 +7,7 @@ Datasetsample_hotels.parquet — 19 hotel series, daily frequency
 
 Target Normalised daily room demand (y)
 
-Forecast horizon -> h = 28 days (next 4 weeks)
+Forecast horizon -> `h = 28 days` (next 4 weeks)
 
 Training period -> 2022-01-01 → 2023-06-02 
 
