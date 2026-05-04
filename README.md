@@ -19,9 +19,17 @@ Validation strategy -> 5-fold non-overlapping time-series cross-validation (step
 
 🤖 Models Compared
 
-| Category | Model | Package |
-|---|---|---|
-| Baseline | Naive | `statsforecast` |
-| Baseline | SeasonalNaive (season_length=7) | `statsforecast` |
+## 🤖 Models Compared
+
+| Category | Model | Package | Description |
+|---|---|---|---|
+| Baseline | Naive | `statsforecast` | Repeats the last observed value for all future steps |
+| Baseline | SeasonalNaive | `statsforecast` | Repeats the last observed seasonal cycle (weekly, season=7) |
+| Statistical | AutoETS | `statsforecast` | Automatically selects the best Error/Trend/Seasonality model |
+| Statistical | AutoARIMA | `statsforecast` | Automatically selects the best ARIMA order via stepwise search |
+| ML | LightGBM | `mlforecast` | Gradient boosted trees with lag, rolling, and calendar features |
+| Neural | NBEATS | `neuralforecast` | Neural basis expansion network for interpretable forecasting |
+| Neural | NHITS | `neuralforecast` | Neural hierarchical interpolation for long-horizon forecasting |
+| Foundation | Chronos T5-small | `chronos-forecasting` | Pretrained language-model-style forecaster, applied zero-shot |
 
 
