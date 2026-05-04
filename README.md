@@ -18,6 +18,5 @@ Total observations -> 10,172 rows across 19 hotels
 Validation strategy -> 5-fold non-overlapping time-series cross-validation (step = 28)
 
 🤖 Models Compared
-CategoryModelPackageBaselineNaivestatsforecastBaselineSeasonalNaive (season_length=7)statsforecastStatisticalAutoETSstatsforecastStatisticalAutoARIMAstatsforecastMLLightGBMmlforecastNeuralNBEATSneuralforecastNeuralNHITSneuralforecastFoundationChronos T5-smallchronos-forecasting
 
 
