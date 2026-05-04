@@ -9,11 +9,11 @@ Target Normalised daily room demand (y)
 
 Forecast horizon -> `h = 28 days` (next 4 weeks)
 
-Training period -> 2022-01-01 → 2023-06-02 
+Training period -> `2022-01-01 → 2023-06-02`
 
-Test period -> 2023-06-03 → 2023-06-30
+Test period -> `2023-06-03 → 2023-06-30`
 
-Total observations -> 10,172 rows across 19 hotels
+Total observations -> `10,172 rows across 19 hotels`
 
 Validation strategy -> 5-fold non-overlapping time-series cross-validation (step = 28)
 
