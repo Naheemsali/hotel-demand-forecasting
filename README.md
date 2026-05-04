@@ -19,4 +19,6 @@ Validation strategy -> 5-fold non-overlapping time-series cross-validation (step
 
 🤖 Models Compared
 
+Category:   Baseline     Model: Naive     Package: statsforecast
+
 
