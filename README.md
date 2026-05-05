@@ -1,5 +1,5 @@
 # Hotel-Demand-Dorecasting
-In this project I was required to forecaste daily hotel demand for 17 hotel properties accross a 28-day period. I used a comprehensive multi-model benchworking framework <www.google.com> | [Notebook 1](www.google.com)
+In this project I was required to forecaste daily hotel demand for 17 hotel properties accross a 28-day period. I used a comprehensive multi-model benchworking framework <[Open in Google Colab](https://colab.research.google.com/drive/https://colab.research.google.com/drive/1dAi5kjSD4AqLHn08wTjalRR2mnPwgkxC?usp=sharing)> | [Notebook 1](www.google.com)
 
 PROJECT OVERVIEW
 
