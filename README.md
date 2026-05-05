@@ -79,7 +79,7 @@ Allows full inspection of model behavior over time
 
 Serves as the foundation for computing evaluation metrics
 
-# 2. `Full Metrics (Per Series & Model)`
+## 2. `Full Metrics (Per Series & Model)`
 
 File: full_metrics.csv
 
@@ -97,7 +97,7 @@ Purpose:
 Shows how each model performs on individual hotel series
 Helps identify whether certain models perform better for specific types of hotels
 
-# 3. `Model Summary (Overall Performance)`
+## 3. `Model Summary (Overall Performance)`
 
 File: model_summary.csv
 
@@ -113,7 +113,7 @@ Interpretation:
 Lower RMSE / MAE → better model
 ME close to 0 → less bias
 
-# 4. `Model Win Counts`
+## 4. `Model Win Counts`
 
 File: model_wins.csv
 
@@ -129,7 +129,7 @@ Interpretation:
 More wins = more consistent performance
 A model may have best average performance but fewer wins
 
-# 5. `Final Test Forecasts`
+## 5. `Final Test Forecasts`
 
 File: final_28_day_hotel_forecasts.csv
 
@@ -146,7 +146,7 @@ Purpose:
 Represents the actual deliverable forecast
 Simulates real-world future demand predictions
 
-# 6. `Forecast vs. Actual Plots`
+## 6. `Forecast vs. Actual Plots`
 
 Location: plots/ folder
 
