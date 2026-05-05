@@ -107,6 +107,7 @@ This file aggregates performance across all hotels by averaging metrics.
 Purpose:
 
 Provides a high-level comparison of models
+
 Used to determine the best overall model
 
 Interpretation:
@@ -123,11 +124,13 @@ This table counts how often each model achieved the lowest error for each metric
 Purpose:
 
 Measures consistency across series
+
 Highlights whether a model wins frequently or only occasionally
 
 Interpretation:
 
 More wins = more consistent performance
+
 A model may have best average performance but fewer wins
 
 ## 5. `Final Test Forecasts`
@@ -138,13 +141,14 @@ This file contains the final 28-day demand forecasts for each hotel.
 
 Each row includes:
 
-Hotel ID
-Forecast date
-Predicted demand
+- Hotel ID
+- Forecast date
+- Predicted demand
 
 Purpose:
 
 Represents the actual deliverable forecast
+
 Simulates real-world future demand predictions
 
 ## 6. `Forecast vs. Actual Plots`
@@ -159,10 +163,11 @@ Model predictions
 Purpose:
 
 Provides intuitive understanding of model performance
+
 Highlights:
-Trend tracking
-Seasonality capture
-Forecast error patterns
+- Trend tracking
+- Seasonality capture
+- Forecast error patterns
 
 ## Key Findings 
 
