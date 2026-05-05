@@ -68,10 +68,10 @@ This file contains all predictions from every model across all cross-validation 
 
 Each row represents:
 
-A specific hotel (unique_id)
-A forecast date (ds)
-The actual demand (y)
-Predictions from each model
+- A specific hotel (unique_id)
+- A forecast date (ds)
+- The actual demand (y)
+- Predictions from each model
 
 Purpose: 
 
