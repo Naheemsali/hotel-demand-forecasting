@@ -3,7 +3,7 @@ In this project I was required to forecaste daily hotel demand for 17 hotel prop
 
 📋 PROJECT OVERVIEW
 
-Datasetsample_hotels.parquet — 19 hotel series, daily frequency
+Datasetsample_hotels.parquet — 17 hotel series, daily frequency
 
 Target Normalised daily room demand (y)
 
