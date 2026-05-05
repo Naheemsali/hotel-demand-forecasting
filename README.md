@@ -87,14 +87,15 @@ This dataset reports evaluation metrics for each hotel and each model.
 
 Metrics included:
 
-ME (bias)
-MAE
-RMSE
-MAPE (when applicable)
+- ME (bias)
+- MAE
+- RMSE
+- MAPE (when applicable)
 
 Purpose:
 
 Shows how each model performs on individual hotel series
+
 Helps identify whether certain models perform better for specific types of hotels
 
 ## 3. `Model Summary (Overall Performance)`
