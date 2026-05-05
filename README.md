@@ -171,15 +171,15 @@ Highlights:
 
 ## Key Findings 
 
-## 🏁 Key Findings
+NHITS emerged as the strongest overall model across all evaluation stages. It achieved the lowest RMSE during cross-validation (0.122) and maintained superior performance on the final test set (RMSE ≈ 0.088), demonstrating strong generalization to unseen data.
 
-NHITS emerged as the strongest overall model across all evaluation metrics. It achieved the lowest RMSE (0.122) during cross-validation and maintained its performance on the final test set (RMSE ≈ 0.088), confirming its ability to generalize to unseen data.
+In addition to its top performance, NHITS was also the most consistent model, winning the majority of comparisons across MAE, RMSE, and MAPE metrics. This indicates that it performs reliably across a wide range of hotel demand patterns rather than excelling only in specific cases.
 
-In addition to strong average performance, NHITS demonstrated the highest consistency, winning the majority of comparisons across MAE, RMSE, and MAPE metrics. This indicates that it performed well across a wide range of hotel demand patterns rather than excelling on only a few series.
+AutoARIMA ranked as the second-best model, with strong performance in both cross-validation and test results (RMSE ≈ 0.112). This highlights that traditional statistical methods remain highly competitive in structured time-series forecasting problems.
 
-AutoARIMA and AutoETS also performed well, showing that traditional statistical models remain competitive in structured time-series forecasting tasks. Chronos, the foundation model, delivered solid results without any training, highlighting the potential of pretrained forecasting models.
+Neural models overall performed well, with NBEATS also delivering solid results, though slightly behind NHITS. Chronos, the foundation model, achieved competitive performance without any training, demonstrating the potential of pretrained forecasting models in real-world applications.
 
-Despite incorporating forward-looking on-the-books (OTB) features, LightGBM performed significantly worse than all other models. This suggests that lag-based machine learning approaches may struggle to capture complex temporal dependencies compared to dedicated time-series models.
+Despite incorporating forward-looking on-the-books (OTB) features, LightGBM significantly underperformed relative to all other models (RMSE ≈ 0.282). This suggests that feature-based machine learning approaches may struggle to capture complex temporal dependencies compared to specialized time-series models.
 
-Overall, the results demonstrate that modern neural forecasting models, particularly NHITS, are highly effective for capturing seasonality, trends, and nonlinear demand patterns in hotel forecasting applications.
+Overall, the results demonstrate that modern neural forecasting architectures, particularly NHITS, are highly effective for capturing nonlinear demand patterns, seasonality, and trends in hotel demand forecasting.
 
