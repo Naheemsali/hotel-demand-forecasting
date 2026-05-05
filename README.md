@@ -60,7 +60,7 @@ This allows it to capture complex temporal patterns without manual feature engin
 ##  Evaluation & Outputs
 To compare model performance and ensure reproducibility, multiple outputs were generated throughout the forecasting pipeline
 
-1. Cross-Validation Predictions
+1. Cross-Validation Predictions`
 
 File: cross_validation_predictions.csv
 
@@ -73,7 +73,7 @@ A forecast date (ds)
 The actual demand (y)
 Predictions from each model
 
- Purpose: 
+Purpose: 
 
 Allows full inspection of model behavior over time
 
