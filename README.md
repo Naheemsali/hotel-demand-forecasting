@@ -13,7 +13,7 @@ Training period -> `2022-01-01 → 2023-06-02`
 
 Test period -> `2023-06-03 → 2023-06-30`
 
-Total observations -> `10,172 rows across 17 hotels`
+Total observations -> `8,806 training rows across 17 hotels`
 
 Validation strategy -> 5-fold non-overlapping time-series cross-validation (step = 28)
 
@@ -36,21 +36,19 @@ Validation strategy -> 5-fold non-overlapping time-series cross-validation (step
 ## 🔧 Methodology
 
 ### Cross-Validation
-Rather than a single train/test split, I used 5-fold time-series cross-validation with non-overlapping windows. Each fold moves forward by 28 days, so the model is tested on 5 different 28-day periods before ever touching the final test set. This gives a much more reliable picture of how each model actually performs.
+I ran a 5-fold time-series cross-validation meaning each model was tested on 5 
+different 28-day windows, stepping forward through the data without any overlap between 
+folds. By the time a model touches the final held-out test set, it has already been 
+evaluated across 140 days worth of out-of-sample predictions. This makes the cross-
+validation results much more trustworthy than a single split would be.
 
-### LightGBM Features
-LightGBM needs hand-crafted features since it has no built-in notion of time. I gave it:
-- Recent demand values at lags 1, 7, 14, and 28 days
-- Rolling averages and standard deviations to capture short-term trends
-- Calendar features like day of week, month, and quarter to capture seasonality
-- The target was differenced at lags 1 and 7 before training to remove trend and weekly patterns
+### Data Cleaning
+When I ran data validation checks `hotel 77` and `hotel 28` had near zero demand accross the entire period. They were unnessary to forecast and only skewed the overall results, therefore, I dropped both datasets. 
+
+### On-The-Books (OTB) Features 
+The dataset contains 60 OTB columns representing how many rooms were already booked at 1–60 days before each arrival date. This is a wonderful source of forward looking demand signal. I incorporated OTB features into the models that support them, limiting it to `otb_1` through `otb_28` to prevent data leakage.
 
 ### Foundation Model
 Chronos is a pretrained forecasting model released by Amazon — think of it like a language model but for time series. Importantly, it requires no training on your data and no API key. I loaded it and ran it directly on each hotel series to generate 20 forecast samples, then took the median as the final prediction.
 
-### Data Cleaning
-When I ran the data validation checks, `hotel_77` came up with 16 missing dates in its history. Rather than dropping the series entirely, I filled the gaps using linear interpolation so the series stayed continuous. This was necessary because MLForecast strictly requires gap-free daily timestamps.
-
-### A Note on MAPE
-MAPE divides by the actual value, which breaks down completely when demand is zero. Since 320 rows in this dataset have zero demand, reporting MAPE would produce undefined or infinite values for those days. I chose to drop it entirely and rely on MAE and RMSE instead, which are more honest metrics for this data.
 
