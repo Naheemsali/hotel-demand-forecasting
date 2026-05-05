@@ -1,7 +1,7 @@
 # Hotel-Demand-Dorecasting
 In this project I was required to forecaste daily hotel demand for 17 hotel properties accross a 28-day period. I used a comprehensive multi-model benchworking framework <www.google.com> | [Notebook 1](www.google.com)
 
-📋 PROJECT OVERVIEW
+PROJECT OVERVIEW
 
 Datasetsample_hotels.parquet —> 17 hotel series, daily frequency
 
@@ -17,7 +17,7 @@ Total observations -> `8,806 training rows across 17 hotels`
 
 Validation strategy -> 5-fold non-overlapping time-series cross-validation (step = 28)
 
-## 🤖 Models Compared
+##  Models Compared
 
 | Category | Model | Package | Description |
 |---|---|---|---|
@@ -31,7 +31,7 @@ Validation strategy -> 5-fold non-overlapping time-series cross-validation (step
 | Foundation | Chronos T5-small | `chronos-forecasting` | Pretrained language-model-style forecaster, applied zero-shot |
 
 
-## 🔧 Methodology
+##  Methodology
 
 ### Cross-Validation
 I ran a 5-fold time-series cross-validation meaning each model was tested on 5 
@@ -57,10 +57,10 @@ Produces predictions using the median of those samples
 
 This allows it to capture complex temporal patterns without manual feature engineering.
 
-## 📊 Evaluation & Outputs
+##  Evaluation & Outputs
 To compare model performance and ensure reproducibility, multiple outputs were generated throughout the forecasting pipeline
 
-🔁 1. Cross-Validation Predictions
+1. Cross-Validation Predictions
 
 File: cross_validation_predictions.csv
 
@@ -73,13 +73,13 @@ A forecast date (ds)
 The actual demand (y)
 Predictions from each model
 
-👉 Purpose: 
+ Purpose: 
 
 Allows full inspection of model behavior over time
 
 Serves as the foundation for computing evaluation metrics
 
-📏 2. Full Metrics (Per Series & Model)
+2. Full Metrics (Per Series & Model)
 
 File: full_metrics.csv
 
@@ -92,42 +92,42 @@ MAE
 RMSE
 MAPE (when applicable)
 
-👉 Purpose:
+Purpose:
 
 Shows how each model performs on individual hotel series
 Helps identify whether certain models perform better for specific types of hotels
 
-📊 3. Model Summary (Overall Performance)
+3. Model Summary (Overall Performance)
 
 File: model_summary.csv
 
 This file aggregates performance across all hotels by averaging metrics.
 
-👉 Purpose:
+Purpose:
 
 Provides a high-level comparison of models
 Used to determine the best overall model
 
-👉 Interpretation:
+Interpretation:
 
 Lower RMSE / MAE → better model
 ME close to 0 → less bias
-🏆 4. Model Win Counts
+4. Model Win Counts
 
 File: model_wins.csv
 
 This table counts how often each model achieved the lowest error for each metric across all hotels.
 
-👉 Purpose:
+Purpose:
 
 Measures consistency across series
 Highlights whether a model wins frequently or only occasionally
 
-👉 Interpretation:
+Interpretation:
 
 More wins = more consistent performance
 A model may have best average performance but fewer wins
-🔮 5. Final Test Forecasts
+5. Final Test Forecasts
 
 File: final_28_day_hotel_forecasts.csv
 
@@ -139,11 +139,11 @@ Hotel ID
 Forecast date
 Predicted demand
 
-👉 Purpose:
+Purpose:
 
 Represents the actual deliverable forecast
 Simulates real-world future demand predictions
-📈 6. Forecast vs. Actual Plots
+6. Forecast vs. Actual Plots
 
 Location: plots/ folder
 
@@ -152,11 +152,15 @@ These visualizations compare:
 Actual demand
 Model predictions
 
-👉 Purpose:
+Purpose:
 
 Provides intuitive understanding of model performance
 Highlights:
 Trend tracking
 Seasonality capture
 Forecast error patterns
+
+## Key Findings 
+
+
 
