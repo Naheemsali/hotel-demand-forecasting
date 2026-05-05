@@ -31,8 +31,6 @@ Validation strategy -> 5-fold non-overlapping time-series cross-validation (step
 | Foundation | Chronos T5-small | `chronos-forecasting` | Pretrained language-model-style forecaster, applied zero-shot |
 
 
-🔧 Methodology
-
 ## 🔧 Methodology
 
 ### Cross-Validation
