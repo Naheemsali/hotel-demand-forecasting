@@ -68,7 +68,25 @@ This approach provides a much more reliable estimate of performance than a singl
 This allows it to capture complex temporal patterns without manual feature engineering.
 
 ### Baseline & Statistical Models 
+I first established benchmark models using classical time-series approaches:
 
+- Naive
+- Seasonal Naive
+- AutoETS
+- AutoARIMA
+
+These models were implemented using the StatsForecast library and evaluated across all cross-validation folds.
+
+### Machine Learning Model (LightGBM)
+Next, I built a machine learning model using LightGBM 
+
+To enhance predictive power, I incorporated:
+
+- Lag features (1, 7, 14, 28 days)
+- Rolling statistics (means and standard deviations)
+- Calendar features (day of week, month, quarter)
+
+Additionally, I included On-The-Books (OTB) features, which represent bookings made 1–60 days in advance. To prevent data leakage, I restricted these features to `otb_1` through `otb_28`, ensuring only information available before the forecast horizon was used.
 
 #  Evaluation & Outputs
 To compare model performance and ensure reproducibility, multiple outputs were generated throughout the forecasting pipeline
