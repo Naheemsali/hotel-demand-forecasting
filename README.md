@@ -92,8 +92,8 @@ Additionally, I included On-The-Books (OTB) features, which represent bookings m
 ### Neural Forecast Modeling 
 I then implemented deep learning models using the NeuralForecast framework:
 
-- NBEATS (pure time-series model)
-- NHITS (supports exogenous features)
+- NBEATS 
+- NHITS 
 
 NHITS was able to leverage OTB features, while NBEATS relied solely on historical demand. Both models were trained and evaluated using the same cross-validation framework for consistency.
 
