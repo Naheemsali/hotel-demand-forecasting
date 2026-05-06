@@ -33,13 +33,20 @@ Validation strategy -> 5-fold non-overlapping time-series cross-validation (step
 
 #  Methodology
 
-### Data Loading and Preparation 
+### Data Loading & Preparation 
 I began by loading the hotel demand dataset and standardizing the column names to match forecasting library requirements `unique_id`, `ds`, and `y`. The data was sorted chronologically for each hotel to ensure proper time-series structure.
 
 During initial validation, I identified two hotels `hotel_28` and `hotel_77` with near-zero demand across the entire time period. Because these series provided no meaningful signal and distorted evaluation metrics, I removed them from the dataset. The final dataset consists of 17 hotel time series, each with consistent daily observations.
 
-### Data Cleaning
-When I ran data validation checks `hotel 77` and `hotel 28` had near zero demand accross the entire period. They were unnessary to forecast and only skewed the overall results, therefore, I dropped both datasets. 
+### Data Quality Checks
+Before modeling, I performed several validation checks:
+
+- Verified no missing values in key columns `unique_id`, `ds`, `y`
+- Confirmed consistent time series lengths across all hotels
+- Identified and got rid of duplicate or missing dates by reindexing each series
+- Interpolated minor gaps in demand values to maintain continuity
+
+These steps make sure that all models were trained on clean, reliable time-series data. 
 
 ### On-The-Books (OTB) Features 
 The dataset contains 60 OTB columns representing how many rooms were already booked at 1–60 days before each arrival date. This is a wonderful source of forward looking demand signal. I incorporated OTB features into the models that support them, limiting it to `otb_1` through `otb_28` to prevent data leakage.
