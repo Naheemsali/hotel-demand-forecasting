@@ -1,0 +1,9 @@
+,ME (lowest |bias|),MAE,RMSE,MAPE
+Naive,1,2,1,1
+SeasonalNaive,3,0,0,2
+AutoETS,2,3,2,2
+AutoARIMA,2,2,4,3
+LightGBM,0,1,1,2
+AutoNBEATS,5,3,4,1
+AutoNHITS,1,2,2,2
+Chronos,3,4,3,4

@@ -1,0 +1,9 @@
+,MAE,RMSE,ME,MAPE
+Naive,,,,
+SeasonalNaive,,,,
+AutoETS,,,,
+AutoARIMA,,,,
+LightGBM,,,,
+AutoNBEATS,,,,
+AutoNHITS,,,,
+Chronos,,,,
