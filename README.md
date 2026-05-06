@@ -33,12 +33,10 @@ Validation strategy -> 5-fold non-overlapping time-series cross-validation (step
 
 #  Methodology
 
-### Cross-Validation
-I ran a 5-fold time-series cross-validation meaning each model was tested on 5 
-different 28-day windows, stepping forward through the data without any overlap between 
-folds. By the time a model touches the final held-out test set, it has already been 
-evaluated across 140 days worth of out-of-sample predictions. This makes the cross-
-validation results much more trustworthy than a single split would be.
+### Data Loading and Preparation 
+I began by loading the hotel demand dataset and standardizing the column names to match forecasting library requirements `unique_id`, `ds`, and `y`. The data was sorted chronologically for each hotel to ensure proper time-series structure.
+
+During initial validation, I identified two hotels `hotel_28` and `hotel_77` with near-zero demand across the entire time period. Because these series provided no meaningful signal and distorted evaluation metrics, I removed them from the dataset. The final dataset consists of 17 hotel time series, each with consistent daily observations.
 
 ### Data Cleaning
 When I ran data validation checks `hotel 77` and `hotel 28` had near zero demand accross the entire period. They were unnessary to forecast and only skewed the overall results, therefore, I dropped both datasets. 
