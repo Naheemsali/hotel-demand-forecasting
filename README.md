@@ -88,6 +88,26 @@ To enhance predictive power, I incorporated:
 
 Additionally, I included On-The-Books (OTB) features, which represent bookings made 1–60 days in advance. To prevent data leakage, I restricted these features to `otb_1` through `otb_28`, ensuring only information available before the forecast horizon was used.
 
+
+### Neural Forecast Modeling 
+I then implemented deep learning models using the NeuralForecast framework:
+
+- NBEATS (pure time-series model)
+- NHITS (supports exogenous features)
+
+NHITS was able to leverage OTB features, while NBEATS relied solely on historical demand. Both models were trained and evaluated using the same cross-validation framework for consistency.
+
+### Foundation Model (Chronos) 
+Finally, I incorporated Chronos, a pretrained time-series foundation model developed by Amazon.
+
+Key characteristics:
+
+- No dataset-specific training required
+- Generates multiple forecast samples
+- Final predictions are computed using the median forecast
+
+Chronos was evaluated using a custom 5-fold cross-validation procedure to ensure consistency with other models.
+
 #  Evaluation & Outputs
 To compare model performance and ensure reproducibility, multiple outputs were generated throughout the forecasting pipeline
 
