@@ -48,19 +48,27 @@ Before modeling, I performed several validation checks:
 
 These steps make sure that all models were trained on clean, reliable time-series data. 
 
-### On-The-Books (OTB) Features 
-The dataset contains 60 OTB columns representing how many rooms were already booked at 1–60 days before each arrival date. This is a wonderful source of forward looking demand signal. I incorporated OTB features into the models that support them, limiting it to `otb_1` through `otb_28` to prevent data leakage.
+### Train/Test Splits
+Next, I split the dataset into 2 sets:
 
-### Foundation Model (Chronos)
-Chronos is a pretrained time-series foundation model developed by Amazon. It operates similarly to a language model but is designed for forecasting tasks.
+- Training set: All observations except the final 28 days
+- Test set: The final 28 days for each hotel
 
-Unlike traditional models, Chronos:
+The test set was completely held out and only used for final model evaluation, ensuring an unbiased assessment of performance.
 
-Requires no training on the dataset
-Generates multiple forecast samples
-Produces predictions using the median of those samples
+### Cross-Validation Strategy 
+To evaluate model performance robustly, I implemented a 5-fold rolling time-series cross-validation:
+
+- Each fold forecasts a 28-day horizon (H = 28)
+- Folds move forward in time with no overlap
+- Total of 140 days of out-of-sample evaluation per model
+
+This approach provides a much more reliable estimate of performance than a single train/test split, as each model is tested across multiple time periods
 
 This allows it to capture complex temporal patterns without manual feature engineering.
+
+### Baseline & Statistical Models 
+
 
 #  Evaluation & Outputs
 To compare model performance and ensure reproducibility, multiple outputs were generated throughout the forecasting pipeline
