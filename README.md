@@ -222,15 +222,17 @@ Highlights:
 
 ## Key Findings 
 
-NHITS emerged as the strongest overall model across all evaluation stages. It achieved the lowest RMSE during cross-validation (0.122) and maintained superior performance on the final test set (RMSE ≈ 0.088), demonstrating strong generalization to unseen data.
+## Key Findings
 
-In addition to its top performance, NHITS was also the most consistent model, winning the majority of comparisons across MAE, RMSE, and MAPE metrics. This indicates that it performs reliably across a wide range of hotel demand patterns rather than excelling only in specific cases.
+The AutoNBEATS and AutoNHITS models were the strongest performers during cross-validation, both achieving the lowest average RMSE of approximately 0.148. This suggests that the automated neural forecasting models were effective at capturing the nonlinear demand patterns and seasonality present across the hotel series.
 
-AutoARIMA ranked as the second-best model, with strong performance in both cross-validation and test results (RMSE ≈ 0.112). This highlights that traditional statistical methods remain highly competitive in structured time-series forecasting problems.
+On the final held-out test set, AutoARIMA achieved the lowest RMSE of approximately 0.112, slightly outperforming AutoNHITS and AutoNBEATS. However, the difference between these three models was small, indicating that both the statistical and neural approaches generalized well to unseen hotel demand data.
 
-Neural models overall performed well, with NBEATS also delivering solid results, though slightly behind NHITS. Chronos, the foundation model, achieved competitive performance without any training, demonstrating the potential of pretrained forecasting models in real-world applications.
+The model win counts show that performance varied by hotel and metric rather than one model dominating every category. AutoNBEATS had the strongest cross-validation win profile overall, while Chronos and AutoARIMA were also competitive across several metrics. This suggests that different hotel series may benefit from different model structures.
 
-Despite incorporating forward-looking on-the-books (OTB) features, LightGBM significantly underperformed relative to all other models (RMSE ≈ 0.282). This suggests that feature-based machine learning approaches may struggle to capture complex temporal dependencies compared to specialized time-series models.
+Chronos performed competitively without dataset-specific training, which highlights the value of pretrained foundation models for forecasting tasks. Although it was not the top model overall, its performance was close to the leading models and required less tuning.
 
-Overall, the results demonstrate that modern neural forecasting architectures, particularly NHITS, are highly effective for capturing nonlinear demand patterns, seasonality, and trends in hotel demand forecasting.
+LightGBM underperformed relative to the time-series-specific models, even after incorporating OTB features. This suggests that feature-based machine learning approaches may struggle to capture sequential demand patterns compared with models designed specifically for forecasting.
+
+Overall, the results show that AutoNBEATS and AutoNHITS were strongest in cross-validation, while AutoARIMA was the best final test performer. Because the top models were close, the final takeaway is that both automated neural forecasting models and traditional statistical models are highly effective for this hotel demand forecasting problem.
 
