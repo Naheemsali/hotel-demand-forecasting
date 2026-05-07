@@ -220,8 +220,6 @@ Highlights:
 - Seasonality capture
 - Forecast error patterns
 
-## Key Findings 
-
 ## Key Findings
 
 The AutoNBEATS and AutoNHITS models were the strongest performers during cross-validation, both achieving the lowest average RMSE of approximately 0.148. This suggests that the automated neural forecasting models were effective at capturing the nonlinear demand patterns and seasonality present across the hotel series.
